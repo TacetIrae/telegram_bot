@@ -3,13 +3,14 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import datetime
 from spy import log
 
+
 async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await log(update, context)
     await update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await log(update, context)
-    await update.message.reply_text(f'Currently there is following commands:\n/hello\n/help\n/time\n/sum')
+    await update.message.reply_text(f'Currently there is following commands:\n/hello\n/help\n/time\n/calc')
 
 async def time(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await log(update, context)
@@ -17,6 +18,7 @@ async def time(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def sum_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update, context)
+    await update.message.reply_text('Make your input')
     msg = update.message.text
     print(msg)
     items = msg.split()
@@ -26,15 +28,14 @@ async def sum_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> fl
 
 async def minus_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update, context)
-    msg = update.message.text
-    print(msg)
-    items = msg.split()
+    await update.message.reply_text('Ente')
     x = float(items[1])
     y = float(items[2])
     await update.message.reply_text(f'{x} - {y} = {x-y}')
 
 async def multiply_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update,context)
+    await update.message.reply_text('Make your with a spacebar between 2 numbers you want to use for calculation')
     msg = update.message.text
     print(msg)
     items = msg.split()
@@ -42,8 +43,9 @@ async def multiply_command (update: Update, context: ContextTypes.DEFAULT_TYPE) 
     y = float(items[2])
     await  update.message.reply_text(f'{x} * {y} = {x*y}')
     
-async def devide_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
+async def divide_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update,context)
+    await update.message.reply_text('Make your with a spacebar between 2 numbers you want to use for calculation')
     msg = update.message.text
     print(msg)
     items = msg.split()

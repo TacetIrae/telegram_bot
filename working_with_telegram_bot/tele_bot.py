@@ -14,16 +14,15 @@ async def calc_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     "2.-\n"
                                     "3.*\n"
                                     "4./\n")
-    msg = update.message.text
-
-    if msg == '1':
-        app.add_handler(CommandHandler("calc", bot_commands.sum_command))
-    elif msg == '2':
-        app.add_handler(CommandHandler("calc", bot_commands.minus_command))
-    elif msg == '3':
-        app.add_handler(CommandHandler("calc", bot_commands.multiply_command))
-    elif msg == 4:
-        app.add_handler(CommandHandler("calc", bot_commands.devide_command))
+    choice = update.message.text
+    if choice == '1':
+        app.add_handler(CommandHandler("sum_command", bot_commands.sum_command))
+    elif choice == '2':
+        app.add_handler(CommandHandler("minus_command", bot_commands.minus_command))
+    elif choice == '3':
+        app.add_handler(CommandHandler("multiply_command", bot_commands.multiply_command))
+    elif choice == '4':
+        app.add_handler(CommandHandler("divide_command", bot_commands.divide_command))
 
 
 
