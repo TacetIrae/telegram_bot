@@ -16,26 +16,26 @@ async def time(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await log(update, context)
     await update.message.reply_text(f'Current time is: {datetime.datetime.now().time()}')
 
-async def sum_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
+async def sum_command (update: Update,context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update, context)
-    await update.message.reply_text('Make your input')
     msg = update.message.text
     print(msg)
     items = msg.split()
     x = float(items[1])
-    y = float(items [2])
+    y = float(items[2])
     await update.message.reply_text(f'{x} + {y} = {x+y}')
 
 async def minus_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update, context)
-    await update.message.reply_text('Ente')
+    msg = update.message.text
+    print(msg)
+    items = msg.split()
     x = float(items[1])
     y = float(items[2])
     await update.message.reply_text(f'{x} - {y} = {x-y}')
 
 async def multiply_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update,context)
-    await update.message.reply_text('Make your with a spacebar between 2 numbers you want to use for calculation')
     msg = update.message.text
     print(msg)
     items = msg.split()
@@ -45,7 +45,6 @@ async def multiply_command (update: Update, context: ContextTypes.DEFAULT_TYPE) 
     
 async def divide_command (update: Update, context: ContextTypes.DEFAULT_TYPE) -> float:
     await log(update,context)
-    await update.message.reply_text('Make your with a spacebar between 2 numbers you want to use for calculation')
     msg = update.message.text
     print(msg)
     items = msg.split()
